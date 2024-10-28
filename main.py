@@ -40,7 +40,7 @@ async def process_audio(file: UploadFile = File(...)):
         # Agora enviar o arquivo de áudio para o Whisper da OpenAI para transcrição
         import requests
 
-        openai_api_key = os.getenv(openai_api_key)
+        openai_api_key = os.getenv("OPENAI_API_KEY")
         if not openai_api_key:
             raise HTTPException(status_code=500, detail="Chave da API da OpenAI não encontrada.")
 
